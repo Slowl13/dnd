@@ -1,0 +1,158 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 30px;
+}
+
+.menu button {
+  font-size: 2rem;
+  width: 70%;
+}
+
+.craftContainer {
+  border: 1px solid black;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+.entity-container {
+  border: 2px solid black;
+  border-radius: 30px;
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  cursor: none;
+  margin: 0 auto;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.entity-block {
+  margin: 0 auto;
+  max-width: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px
+}
+
+.entity-block::after {
+  content: "";
+  min-width: 110px;
+  flex: auto;
+}
+
+.tooltip-text {
+  padding: 10px;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  position: absolute;
+  z-index: 100;
+  max-width: 250px;
+}
+
+.title-entity {
+  min-width: 110px;
+  min-height: 110px;
+  max-width: 110px;
+}
+
+.title-entity p {
+  margin: 0;
+}
+
+.main-logo {
+  width: 250px;
+  cursor: none;
+  display: block;
+  margin: 0 auto;
+}
+
+.search {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  max-width: 500px;
+  width: 80%;
+  font-size: 1.5rem;
+}
+
+.main-logo:hover {
+  width: 255px;
+  transition-duration: 0.5s;
+}
+
+.entity-container:hover {
+  width: 53px;
+  height: 53px;
+  transition-duration: 0.5s;
+}
+
+select {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
