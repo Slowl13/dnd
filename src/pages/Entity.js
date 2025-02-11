@@ -92,7 +92,6 @@ export default function Entity(props){
                     entityList.map((item, index)=>{
                         return <div className="title-entity">
                             <div className="entity-container"
-                                onClick={()=>{setToolTipDesc("Текст успешно скопирован."), navigator.clipboard.writeText(toolTipDesc)}}
                                 onMouseOver={()=>{ setShowTooltip(true); setToolTipDesc(item.desc)}} 
                                 onMouseLeave={()=> setShowTooltip(false)}
                                 onMouseMove={getCursorPosition} 

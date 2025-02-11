@@ -3,9 +3,9 @@ import Entity from './Entity';
 
 function App() {
 
-  const [router, setRouter] = useState('Home')
+  const [router, setRouter] = useState("Home")
 
-  useEffect
+  useEffect(()=> localStorage.setItem('route', router), [router])
 
   return (
     <div className="App">
@@ -15,14 +15,14 @@ function App() {
         <button onClick={()=>{setRouter("GM")}}>Гмная</button>
       </div>}
       {router === "Achive" &&
-        <button onClick={()=>{setRouter("Home")}} style={{position:"fixed", left:20, top:10}}>Главное меню</button>
+        <button onClick={()=>{setRouter("Home");}} style={{position:"fixed", left:20, top:10}}>Главное меню</button>
 
       }
       {router === "GM" &&
-        <button onClick={()=>{setRouter("Home")}} style={{position:"fixed", left:20, top:10}}>Главное меню</button>
+        <button onClick={()=>{setRouter("Home");}} style={{position:"fixed", left:20, top:10}}>Главное меню</button>
       }
       {router === "Wiki" && <>
-        <button onClick={()=>{setRouter("Home")}} style={{position:"fixed", left:20, top:10}}>Главное меню</button>
+        <button onClick={()=>{setRouter("Home");}} style={{position:"fixed", left:20, top:10}}>Главное меню</button>
         <Entity content="Athala"></Entity>
         <Entity content="SandAndKnowledge"></Entity>
         <Entity content="DragonsAndDemons"></Entity>
