@@ -71,10 +71,11 @@ export default function Entity(props){
     return(
         <>
             {loading && <h1 style={{position:"absolute", bottom:"10px", right:"10px", opacity:0.5}}>Загрузка...</h1>}
-            { !loading && <div onClick={()=>{ setShowTooltip(false)}}>
+            { !loading && <div>
             <h2>{entityData?.title}</h2>
             <img className="main-logo" src={entityData?.main_img}
-                onClick={(e)=>{e.stopPropagation(); setShowTooltip(true); setToolTipDesc(entityData?.desc)}} 
+                onMouseOver={(e)=>{e.stopPropagation(); setShowTooltip(true); setToolTipDesc(entityData?.desc)}} 
+                onMouseLeave={()=> setShowTooltip(false)}
                 onMouseMove={getCursorPosition} 
             ></img>
             <p>Открыто {entityData?.entities?.filter(elem => !["Неизвестная Личность","Неясное Явление","Ненайденный Предмет","Неявная Организация"].includes(elem.title)).length} записей из {entityData.entities?.length}</p>
@@ -91,7 +92,9 @@ export default function Entity(props){
                     entityList.map((item, index)=>{
                         return <div className="title-entity">
                             <div className="entity-container"
-                                onClick={(e)=>{e.stopPropagation(); setShowTooltip(true); setToolTipDesc(item.desc)}} 
+                                onClick={()=>{setToolTipDesc("Текст успешно скопирован."), navigator.clipboard.writeText(toolTipDesc)}}
+                                onMouseOver={()=>{ setShowTooltip(true); setToolTipDesc(item.desc)}} 
+                                onMouseLeave={()=> setShowTooltip(false)}
                                 onMouseMove={getCursorPosition} 
                                 style={{backgroundImage:`url(${item.img})`}}
                                 key={index}>
